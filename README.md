@@ -1,7 +1,7 @@
 # Introduction
 This Tcl script connects, exports, downloads and imports from remote to local PostgreSQL server.
 
-###### This script can
+###### Procedure
 1. Connect to a remote server
 2. Connect to a PostgreSQL Server & export the preferred schema
 3. Download the exported [schema].[DATE].sql to your computer
