@@ -1,16 +1,18 @@
 # Introduction
 
+Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
+blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
+blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
+blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
+blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
 
+### Usage
 
----
-# Usage
-## Usage
-
-1 . Chmod file
+* Chmod file
 ```
 chmod u+x getjets.sh
 ```
-2. Execute:
+* Execute:
 ```
 ./getjets.sh
 ```
