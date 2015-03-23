@@ -1,5 +1,5 @@
 # Introduction
-Hi, I hope you find this script useful.
+This Tcl script connects, exports, downloads and imports from remote to local PostgreSQL server.
 
 ###### This script can
 1. Connect to a remote server
