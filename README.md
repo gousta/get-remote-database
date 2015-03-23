@@ -15,7 +15,7 @@ Copy `config.example.tcl` to `config.tcl`:
 ```
 cp config.example.tcl config.tcl
 ```
-Open `config.tcl` and edit to match your environment settings.
+Edit `config.tcl` to match your environment settings.
 
 The script should have execute permissions in order to be executable:
 ```
