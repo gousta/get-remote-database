@@ -2,8 +2,8 @@
 # Please make sure that all values are set properly.
 
 ## Remote and Local filesystem paths
-set EXPORT_TO_FOLDER "/path/to/folder"
-set DOWNLOAD_TO_FOLDER "/path/to/folder"
+set EXPORT_FOLDER "/path/to/folder"
+set DOWNLOAD_FOLDER "/path/to/folder"
 
 ## Server Settings
 set SERVERSSH "<username>@<host.com>"
