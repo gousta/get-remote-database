@@ -1,9 +1,8 @@
 # Configuration
 # Please make sure that all values are set properly.
 
-## Remote and Local filesystem paths
+## Remote filesystem path to save extracted SQL
 set EXPORT_FOLDER "/path/to/folder"
-set DOWNLOAD_FOLDER "/path/to/folder"
 
 ## Server Settings
 set SERVERSSH "<username>@<host.com>"
