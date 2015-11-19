@@ -1,2 +1,3 @@
 .config.tcl
 config.tcl
+*.conf.tcl
