@@ -39,8 +39,8 @@ if {[file exists $CONFIGFILE] == 1} {
 # ------------------------------------------------------------------------------
 # SCRIPT STARTS HERE
 # ------------------------------------------------------------------------------
-
-set FILE "$PGSCHEMA.$DATESTAMP.sql"
+set DOWNLOAD_FOLDER "$env(PWD)/downloads"
+set FILE "$PGDBNAME.$PGSCHEMA.$DATESTAMP.sql"
 set PGPWD "PGPASSWORD=\"$PGPASSWORD\""
 
 
