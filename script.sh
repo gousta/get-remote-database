@@ -5,8 +5,9 @@
 # Made with ❤ in Athens, Greece
 #
 # Configuration: Make sure config.tcl exists and contains all necessary
-# variables. Defaults can be found at config.example.tcl
+# variables. Defaults can be found in config.example.tcl
 # ------------------------------------------------------------------------------
+global env
 
 # ------------------------------------------------------------------------------
 # FUNCTIONS
@@ -40,7 +41,8 @@ if {[file exists $CONFIGFILE] == 1} {
 # SCRIPT STARTS HERE
 # ------------------------------------------------------------------------------
 
-set FILE "$PGSCHEMA.$DATESTAMP.sql"
+set DOWNLOAD_FOLDER "$env(PWD)/downloads"
+set FILE "$PGDBNAME.$PGSCHEMA.$DATESTAMP.sql"
 set PGPWD "PGPASSWORD=\"$PGPASSWORD\""
 
 
@@ -48,6 +50,11 @@ set MSG "Today is: $TODAY."
 puts "[clr 6 $MSG]"
 set MSG "File: $FILE"
 puts "[clr 6 $MSG]"
+
+set MSG "Cleaning downloads folder."
+puts "[clr 6 $MSG]"
+file delete -force $DOWNLOAD_FOLDER
+file mkdir $DOWNLOAD_FOLDER
 
 # ------------------------------------------------------------------------------
 # SSH TO SERVER
