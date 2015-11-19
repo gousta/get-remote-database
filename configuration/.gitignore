@@ -1,0 +1,2 @@
+*.conf.tcl
+\!example.conf.tcl

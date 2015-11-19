@@ -13,9 +13,9 @@ This Tcl script connects, exports, downloads and imports from remote to local Po
 Use `config.example.tcl` as sample configuration file.
 Copy `config.example.tcl` to `config.tcl`:
 ```
-cp config.example.tcl config.tcl
+cp config.example.tcl <my-key>.conf.tcl
 ```
-Edit `config.tcl` to match your environment settings.
+Edit `<my-key>.conf.tcl` to match your environment settings.
 
 The script should have execute permissions in order to be executable:
 ```

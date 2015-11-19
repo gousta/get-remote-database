@@ -18,23 +18,42 @@ proc clr {foreground text} {
 }
 
 # ------------------------------------------------------------------------------
-# SET DATE VARIABLES
+# SET VARIABLES
 # ------------------------------------------------------------------------------
+
 set TODAY [timestamp -format %d.%m.%Y]
 set DATESTAMP [timestamp -format %d%m%Y]
+set CONFIGFILE $argv
+
+# ------------------------------------------------------------------------------
+# SHOW WELCOME
+# ------------------------------------------------------------------------------
+
+puts "--------------------------------------------------------------------------"
+puts "--                    GET REMOTE POSTGRESQL DATABASE                    --"
+puts "--------------------------------------------------------------------------"
+puts " "
 
 # ------------------------------------------------------------------------------
 # LOAD CONFIGURATION FILE
 # ------------------------------------------------------------------------------
-set CONFIGFILE "config.tcl"
 
-if {[file exists $CONFIGFILE] == 1} {
-  set MSG "Configuration: Loaded."
-  puts "[clr 6 $MSG]"
-  source $CONFIGFILE
-} else {
-  set MSG "Failed to read configuration file: $env(PWD)/$CONFIGFILE"
+if {$CONFIGFILE == ""} {
+  set MSG "Expecting configuration key after script name."
   puts "[clr 1 $MSG]"
+  exit 0
+}
+
+set CONFIGPATH "configuration/$CONFIGFILE.conf.tcl"
+
+if {[file exists $CONFIGPATH] == 1} {
+  set MSG "Configuration Loaded: $CONFIGPATH"
+  puts "[clr 6 $MSG]"
+  source $CONFIGPATH
+} else {
+  set MSG "Failed to read configuration file: $env(PWD)/$CONFIGPATH"
+  puts "[clr 1 $MSG]"
+  exit 0
 }
 
 # ------------------------------------------------------------------------------
@@ -45,63 +64,8 @@ set DOWNLOAD_FOLDER "$env(PWD)/downloads"
 set FILE "$PGDBNAME.$PGSCHEMA.$DATESTAMP.sql"
 set PGPWD "PGPASSWORD=\"$PGPASSWORD\""
 
-
-set MSG "Today is: $TODAY."
-puts "[clr 6 $MSG]"
 set MSG "File: $FILE"
 puts "[clr 6 $MSG]"
-
-set MSG "Cleaning downloads folder."
-puts "[clr 6 $MSG]"
-file delete -force $DOWNLOAD_FOLDER
-file mkdir $DOWNLOAD_FOLDER
-
-# ------------------------------------------------------------------------------
-# SSH TO SERVER
-# ------------------------------------------------------------------------------
-
-set MSG "\nConnecting to remote server..."
-puts "[clr 6 $MSG]"
-
-eval spawn ssh -oStrictHostKeyChecking=no -oCheckHostIP=no $SERVERSSH
-
-set SSHPROMPT ":|#|\\\$"
-
-interact -o -nobuffer -re $SSHPROMPT return
-send "$SERVERPWD\r"
-
-# ------------------------------------------------------------------------------
-# RUN PG_DUMP AND SAVE TO $FILE
-# ------------------------------------------------------------------------------
-
-set MSG "\nExporting $LCPGSCHEMA schema to SQL file..."
-puts "[clr 6 $MSG]"
-
-interact -o -nobuffer -re $SSHPROMPT return
-send "$PGPWD pg_dump -h $PGHOST -U $PGUSER -n $PGSCHEMA -v $PGDBNAME > $FILE\r"
-
-send "exit\r"
-interact
-
-# ------------------------------------------------------------------------------
-# DOWNLOAD FILE FROM SERVER USING SCP
-# ------------------------------------------------------------------------------
-
-set MSG "\nDownloading exported database from remote server"
-puts "[clr 6 $MSG]"
-
-spawn scp "$SERVERSSH:$EXPORT_FOLDER$FILE" $DOWNLOAD_FOLDER
-
-expect {
-  -re ".*es.*o.*" {
-    exp_send "yes\r"
-    exp_continue
-  }
-  -re ".*sword.*" {
-    exp_send "$SERVERPWD\r"
-  }
-}
-interact
 
 # ------------------------------------------------------------------------------
 # DROP PREVIOUS & IMPORT DOWNLOADED FILE TO POSTGRESQL USING PSQL
@@ -121,7 +85,7 @@ interact
 # SHOW MESSAGES
 # ------------------------------------------------------------------------------
 
-set MSG "\nScript has finished successfully"
+set MSG "\n\nScript has finished successfully"
 puts "[clr 2 $MSG]"
 
 puts "--------------------------"
