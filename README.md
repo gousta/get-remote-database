@@ -10,20 +10,20 @@ This Tcl script connects, exports, downloads and imports from remote to local Po
 
 
 ### How to use
-Use `config.example.tcl` as sample configuration file.
-Copy `config.example.tcl` to `config.tcl`:
+Use `configuration/config.example.tcl` as sample configuration file.
+Copy `configuration/config.example.tcl` to `<my-key>.conf.tcl`:
 ```
-cp config.example.tcl <my-key>.conf.tcl
+cp configuration/config.example.tcl configuration/<my-key>.conf.tcl
 ```
 Edit `<my-key>.conf.tcl` to match your environment settings.
 
 The script should have execute permissions in order to be executable:
 ```
-chmod u+x script.sh
+chmod u+x run.sh
 ```
 Then simply run it by calling:
 ```
-./script.sh
+./run.sh <my-key>
 ```
 
-### Made with ❤ in Athens, Greece
+### Made with <3 in Athens, Greece
