@@ -90,7 +90,7 @@ send "$SERVERPWD\r"
 # RUN PG_DUMP AND SAVE TO $FILE
 # ------------------------------------------------------------------------------
 
-set MSG "\nExporting $LCPGSCHEMA schema to SQL file..."
+set MSG "\nExporting $PGSCHEMA schema to SQL file..."
 puts "[clr 6 $MSG]"
 
 interact -o -nobuffer -re $SSHPROMPT return
@@ -140,9 +140,9 @@ interact
 set MSG "\n\nScript has finished successfully"
 puts "[clr 2 $MSG]"
 
-puts "--------------------------"
-puts "  Made with ❤  in [clr 1 A][clr 6 t][clr 3 h][clr 2 e][clr 5 n][clr 6 s]"
-puts "--------------------------"
+puts "--------------------------------"
+puts "     Made with ❤  in [clr 1 A][clr 6 t][clr 3 h][clr 2 e][clr 5 n][clr 6 s]"
+puts "--------------------------------"
 
 # ------------------------------------------------------------------------------
 exit 0

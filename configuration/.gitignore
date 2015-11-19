@@ -1,2 +1,2 @@
 *.conf.tcl
-\!example.conf.tcl
+!example.conf.tcl
