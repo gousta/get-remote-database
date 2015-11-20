@@ -10,10 +10,10 @@ This Tcl script connects, exports, downloads and imports from remote to local Po
 
 
 ### How to use
-Use `configuration/config.example.tcl` as sample configuration file.
-Copy `configuration/config.example.tcl` to `<my-key>.conf.tcl`:
+Use `configuration/example.conf.tcl` as sample configuration file.
+Copy `configuration/example.conf.tcl` to `<my-key>.conf.tcl`:
 ```
-cp configuration/config.example.tcl configuration/<my-key>.conf.tcl
+cp configuration/example.conf.tcl configuration/<my-key>.conf.tcl
 ```
 Edit `<my-key>.conf.tcl` to match your environment settings.
 
