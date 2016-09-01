@@ -69,6 +69,7 @@ puts "[clr 6 $MSG]"
 
 set MSG "Cleaning downloads folder..."
 puts "[clr 3 $MSG]"
+puts "[clr 3 $DOWNLOAD_FOLDER]"
 file delete -force $DOWNLOAD_FOLDER
 file mkdir $DOWNLOAD_FOLDER
 
@@ -106,15 +107,17 @@ interact
 set MSG "\nDownloading exported database from remote server"
 puts "[clr 6 $MSG]"
 
-spawn scp "$SERVERSSH:$EXPORT_FOLDER$FILE" $DOWNLOAD_FOLDER
+spawn scp "$SERVERSSH:$EXPORT_FOLDER$FILE" $DOWNLOAD_FOLDER/$FILE
 
-expect {
-  -re ".*es.*o.*" {
-    exp_send "yes\r"
-    exp_continue
-  }
-  -re ".*sword.*" {
-    exp_send "$SERVERPWD\r"
+if {$SERVERPWD != ""} {
+  expect {
+    -re ".*es.*o.*" {
+      exp_send "yes\r"..,.
+      exp_continue
+    }
+    -re ".*sword.*" {
+      exp_send "$SERVERPWD\r"
+    }
   }
 }
 interact
