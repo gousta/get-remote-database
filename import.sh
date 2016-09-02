@@ -8,31 +8,7 @@
 # variables. Defaults can be found in config.example.tcl
 # ------------------------------------------------------------------------------
 global env
-
-# ------------------------------------------------------------------------------
-# FUNCTIONS
-# ------------------------------------------------------------------------------
-
-proc clr {foreground text} {
-  return [exec tput setaf $foreground]$text[exec tput sgr0]
-}
-
-# ------------------------------------------------------------------------------
-# SET VARIABLES
-# ------------------------------------------------------------------------------
-
-set TODAY [timestamp -format %d.%m.%Y]
-set DATESTAMP [timestamp -format %d%m%Y]
-set CONFIGFILE $argv
-
-# ------------------------------------------------------------------------------
-# SHOW WELCOME
-# ------------------------------------------------------------------------------
-
-puts "--------------------------------------------------------------------------"
-puts "--                    GET REMOTE POSTGRESQL DATABASE                    --"
-puts "--------------------------------------------------------------------------"
-puts " "
+source shared.tcl
 
 # ------------------------------------------------------------------------------
 # LOAD CONFIGURATION FILE
@@ -43,8 +19,6 @@ if {$CONFIGFILE == ""} {
   puts "[clr 1 $MSG]"
   exit 0
 }
-
-set CONFIGPATH "configuration/$CONFIGFILE.conf.tcl"
 
 if {[file exists $CONFIGPATH] == 1} {
   set MSG "Configuration Loaded: $CONFIGPATH"
@@ -60,7 +34,6 @@ if {[file exists $CONFIGPATH] == 1} {
 # SCRIPT STARTS HERE
 # ------------------------------------------------------------------------------
 
-set DOWNLOAD_FOLDER "$env(PWD)/downloads"
 set FILE "$PGDBNAME.$PGSCHEMA.$DATESTAMP.sql"
 set PGPWD "PGPASSWORD=\"$PGPASSWORD\""
 
@@ -89,9 +62,7 @@ interact
 set MSG "\n\nScript has finished successfully"
 puts "[clr 2 $MSG]"
 
-puts "--------------------------------"
-puts "     Made with ❤  in [clr 1 A][clr 6 t][clr 3 h][clr 2 e][clr 5 n][clr 6 s]"
-puts "--------------------------------"
+puts "Made with ❤ in [clr 1 A][clr 6 t][clr 3 h][clr 2 e][clr 5 n][clr 6 s]"
 
 # ------------------------------------------------------------------------------
 exit 0
