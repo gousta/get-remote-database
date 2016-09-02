@@ -27,6 +27,7 @@ Then simply run it by calling:
 ./run.sh {my-key}
 ```
 
+
 OR you can create an alias to it:
 ```
 alias rpgup="/PATH/TO/PROJECT/get-remote-pg-database/run.sh"
