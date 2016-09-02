@@ -33,7 +33,7 @@ alias rpgup="/PATH/TO/PROJECT/get-remote-pg-database/run.sh"
 ```
 And then use it like this:
 ```
-rpgup {}
+rpgup {my-key}
 ```
 
 That's it. Feel free to contribute if you'd like or feel like something can be improved.
