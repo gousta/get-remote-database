@@ -8,6 +8,10 @@
 # variables. Defaults can be found in config.example.tcl
 # ------------------------------------------------------------------------------
 global env
+
+set SCRIPTPATH [ dict get [ info frame 0 ] file ]
+set PROJECTPATH [file dirname $SCRIPTPATH]
+
 source shared.tcl
 
 # ------------------------------------------------------------------------------
