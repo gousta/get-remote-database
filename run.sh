@@ -7,8 +7,6 @@
 # Configuration: Make sure config.tcl exists and contains all necessary
 # variables. Defaults can be found in config.example.tcl
 # ------------------------------------------------------------------------------
-global env
-
 set SCRIPTPATH [ dict get [ info frame 0 ] file ]
 set PROJECTPATH [file dirname $SCRIPTPATH]
 
@@ -64,7 +62,5 @@ if {$SERVERPWD != ""} {
 }
 interact
 
-
 source $PROJECTPATH/lib/import_clean.tcl
-
 source $PROJECTPATH/lib/shutdown.tcl
