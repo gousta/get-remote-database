@@ -12,13 +12,13 @@ global env
 set SCRIPTPATH [ dict get [ info frame 0 ] file ]
 set PROJECTPATH [file dirname $SCRIPTPATH]
 
-source shared.tcl
+source $PROJECTPATH/shared.tcl
 
 # ------------------------------------------------------------------------------
 # LOAD CONFIGURATION FILE
 # ------------------------------------------------------------------------------
 
-if {$CONFIGFILE == ""} {
+if {$CONFIGFILENAME == ""} {
   set MSG "Expecting configuration key after script name."
   puts "[clr 1 $MSG]"
   exit 0
