@@ -17,6 +17,7 @@ source $PROJECTPATH/shared.tcl
 # ------------------------------------------------------------------------------
 # LOAD CONFIGURATION FILE
 # ------------------------------------------------------------------------------
+
 if {$CONFIGFILENAME == ""} {
   set MSG "Configuration parameter is missing.\nCorrect usage: rpgup {config}"
   puts "[clr 1 $MSG]"
@@ -56,7 +57,7 @@ file mkdir $DOWNLOAD_FOLDER
 set MSG "\nExporting $PGSCHEMA schema to SQL file..."
 puts "[clr 6 $MSG]"
 
-spawn pg_dump -h $PGHOST -U $PGUSER -n $PGSCHEMA -v $PGDBNAME -f $DOWNLOAD_FOLDER/$FILE
+spawn pg_dump --no-owner --no-acl --data-only -h $PGHOST -U $PGUSER -n $PGSCHEMA -v $PGDBNAME -f $DOWNLOAD_FOLDER/$FILE
 if {$PGPASSWORD != ""} {
   expect {
     -re ".*es.*o.*" {
