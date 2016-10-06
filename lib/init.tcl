@@ -21,7 +21,7 @@ if {[file exists $CONFIGPATH] == 1} {
 # SCRIPT STARTS HERE
 # ------------------------------------------------------------------------------
 
-set FILE "$PGDBNAME.$PGSCHEMA.$DATESTAMP.sql"
+set FILE "$CONFIGFILENAME.$PGDBNAME.$PGSCHEMA.$DATESTAMP.sql"
 set PGPWD "PGPASSWORD=\"$PGPASSWORD\""
 
 set MSG "File: $FILE"
