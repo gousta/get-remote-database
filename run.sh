@@ -35,7 +35,7 @@ set MSG "\nExporting $PGSCHEMA schema to SQL file..."
 puts "[clr 6 $MSG]"
 
 interact -o -nobuffer -re $SSHPROMPT return
-send "$PGPWD pg_dump --no-owner --no-acl -h $PGHOST -U $PGUSER -n $PGSCHEMA -v $PGDBNAME > $FILE\r"
+send "$PGPWD pg_dump --no-owner --no-acl -h $PGHOST -U $PGUSER -n $PGSCHEMA -v $PGDBNAME > $EXPORT_FOLDER$FILE\r"
 
 send "exit\r"
 interact
