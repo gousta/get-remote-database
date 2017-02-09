@@ -6,6 +6,7 @@ set EXPORT_FOLDER "/path/to/folder/"
 
 ## Server Settings (leave ssh password blank if you connect using an SSH key)
 set SERVERSSH "<username>@<host.com>"
+set SERVERPEM ""
 set SERVERPWD ""
 
 ## Remote PostgreSQL Settings
