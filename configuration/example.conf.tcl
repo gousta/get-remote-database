@@ -20,3 +20,6 @@ set PGPASSWORD ""
 set LCPGDBNAME "<database_name>"
 set LCPGSCHEMA "<schema>"
 set LCPGUSER "<your-system-profile-username>"
+
+## PSQL commands to run locally after import
+set COMMANDS ""
