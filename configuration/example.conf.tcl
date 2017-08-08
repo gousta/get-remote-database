@@ -17,6 +17,9 @@ set DBUSER ""
 set DBPASSWORD ""
 
 ## Local PostgreSQL Settings
-set LCDBNAME "<database_name>"
-set LCDBSCHEMA "<schema>"
-set LCDBUSER "<your-system-profile-username>"
+set LCPGDBNAME "<database_name>"
+set LCPGSCHEMA "<schema>"
+set LCPGUSER "<your-system-profile-username>"
+
+## PSQL commands to run locally after import
+set COMMANDS ""
