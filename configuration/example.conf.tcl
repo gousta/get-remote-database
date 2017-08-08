@@ -10,13 +10,13 @@ set SERVERPEM ""
 set SERVERPWD ""
 
 ## Remote PostgreSQL Settings
-set PGHOST "<IP>"
-set PGDBNAME "<database_name>"
-set PGSCHEMA "<schema>"
-set PGUSER ""
-set PGPASSWORD ""
+set DBHOST "<IP>"
+set DBNAME "<database_name>"
+set DBSCHEMA "<schema>"
+set DBUSER ""
+set DBPASSWORD ""
 
 ## Local PostgreSQL Settings
-set LCPGDBNAME "<database_name>"
-set LCPGSCHEMA "<schema>"
-set LCPGUSER "<your-system-profile-username>"
+set LCDBNAME "<database_name>"
+set LCDBSCHEMA "<schema>"
+set LCDBUSER "<your-system-profile-username>"

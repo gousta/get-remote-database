@@ -10,7 +10,6 @@ proc clr {foreground text} {
 # SET VARIABLES
 # ------------------------------------------------------------------------------
 
-set TODAY [timestamp -format %d.%m.%Y]
 set DATESTAMP [timestamp -format %d%m%Y]
 set CONFIGFILENAME $argv
 
