@@ -12,16 +12,17 @@ set SERVERPWD ""
 set DB "<postgres or mysql>"
 
 ## Remote Database Settings
-set DBHOST "<IP>"
-set DBNAME "<database_name>"
-set DBSCHEMA "<schema>"
+set DBHOST ""
+set DBSCHEMA ""
+set DBNAME ""
 set DBUSER ""
 set DBPASSWORD ""
 
 ## Local Database Settings
-set LCPGDBNAME "<database_name>"
-set LCPGSCHEMA "<schema>"
-set LCPGUSER "<your-system-profile-username>"
+set LCDBSCHEMA ""
+set LCDBNAME ""
+set LCDBUSER ""
+set LCDBPASSWORD ""
 
 ## PSQL commands to run locally after import
 set COMMANDS ""

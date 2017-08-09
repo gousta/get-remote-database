@@ -8,13 +8,10 @@ that do exactly what their names are.
 
 Generally, a full list of commands would be:
 1. SSH to remote server
-2. Connect to a PostgreSQL Server & export the preferred schema
-3. Download the exported [SCHEMA].[DATE].sql to your computer
-4. Drop the [SCHEMA] from your local PostgreSQL Server
-5. Import the freshly downloaded [SCHEMA].[DATE].sql file to that schema
-
-**NOTE:** Not all scripts do the above. Sometimes I just need to download once a day,
-keep destroying a db and then import again and again to restore it.
+2. Connect to a PostgreSQL or MySQL Server & export the preferred schema/database
+3. Download the exported `.sql` to your computer
+4. Drop the schema/database from your local server
+5. Import the freshly downloaded `.sql` file to that schema
 
 -
 
@@ -41,11 +38,11 @@ Then simply run it by calling:
 
 OR you can create an alias to it:
 ```
-alias rpgup="/PATH/TO/PROJECT/get-remote-pg-database/run.sh"
+alias grd="/PATH/TO/PROJECT/get-remote-database/run.sh"
 ```
 And then use it like this:
 ```
-rpgup {my-key}
+grd {my-key}
 ```
 
 That's it. Feel free to contribute if you'd like or feel like something can be improved.

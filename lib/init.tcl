@@ -12,7 +12,7 @@ set DOWNLOAD_FOLDER "$PROJECTPATH/downloads"
 # LOAD CONFIGURATION FILE
 # ------------------------------------------------------------------------------
 if {$CONFIGFILENAME == ""} {
-  set MSG "Configuration parameter is missing.\nCorrect usage: rpgup {config}"
+  set MSG "Configuration parameter is missing.\nCorrect usage: grd {config}"
   puts "[clr 1 $MSG]"
   exit 0
 }
@@ -31,7 +31,7 @@ if {[file exists $CONFIGPATH] == 1} {
 # SET SOME MORE VARIABLES
 # ------------------------------------------------------------------------------
 
-set FILE "$CONFIGFILENAME.$DBNAME.$DBSCHEMA.$DATESTAMP.sql"
+set FILE "$CONFIGFILENAME.$DBNAME.$DATESTAMP.sql"
 
 set MSG "File: $FILE"
 puts "[clr 6 $MSG]"

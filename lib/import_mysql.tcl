@@ -5,5 +5,5 @@
 set MSG "\nReplacing $LCDBSCHEMA schema with newly downloaded file"
 puts "[clr 6 $MSG]"
 
-spawn mysqldump --opt --protocol=TCP --user=$LCDBUSER --password=$DBPASSWORD $LCDBNAME > $DOWNLOAD_FOLDER/$FILE
+spawn mysqldump --opt --protocol=TCP --user=$LCDBUSER --password=$LCDBPASSWORD $LCDBNAME > $DOWNLOAD_FOLDER/$FILE
 interact
