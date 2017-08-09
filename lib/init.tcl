@@ -1,4 +1,14 @@
 # ------------------------------------------------------------------------------
+# SET VARIABLES
+# ------------------------------------------------------------------------------
+
+set DATESTAMP [timestamp -format %d%m%Y]
+set CONFIGFILENAME $argv
+
+set CONFIGPATH "$PROJECTPATH/configuration/$CONFIGFILENAME.conf.tcl"
+set DOWNLOAD_FOLDER "$PROJECTPATH/downloads"
+
+# ------------------------------------------------------------------------------
 # LOAD CONFIGURATION FILE
 # ------------------------------------------------------------------------------
 if {$CONFIGFILENAME == ""} {
@@ -18,7 +28,7 @@ if {[file exists $CONFIGPATH] == 1} {
 }
 
 # ------------------------------------------------------------------------------
-# SCRIPT STARTS HERE
+# SET SOME MORE VARIABLES
 # ------------------------------------------------------------------------------
 
 set FILE "$CONFIGFILENAME.$DBNAME.$DBSCHEMA.$DATESTAMP.sql"

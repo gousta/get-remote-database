@@ -9,14 +9,16 @@ set SERVERSSH "<username>@<host.com>"
 set SERVERPEM ""
 set SERVERPWD ""
 
-## Remote PostgreSQL Settings
+set DB "<postgres or mysql>"
+
+## Remote Database Settings
 set DBHOST "<IP>"
 set DBNAME "<database_name>"
 set DBSCHEMA "<schema>"
 set DBUSER ""
 set DBPASSWORD ""
 
-## Local PostgreSQL Settings
+## Local Database Settings
 set LCPGDBNAME "<database_name>"
 set LCPGSCHEMA "<schema>"
 set LCPGUSER "<your-system-profile-username>"

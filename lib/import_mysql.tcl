@@ -1,12 +1,9 @@
 # ------------------------------------------------------------------------------
-# DROP PREVIOUS & IMPORT DOWNLOADED FILE TO POSTGRESQL USING PSQL
+# DROP PREVIOUS & IMPORT DOWNLOADED FILE TO MYSQL USING MYSQLDUMP
 # ------------------------------------------------------------------------------
 
 set MSG "\nReplacing $LCDBSCHEMA schema with newly downloaded file"
 puts "[clr 6 $MSG]"
 
-spawn psql -U $LCDBUSER -d $LCDBNAME
-send "\\i $DOWNLOAD_FOLDER/$FILE \r"
-send "$COMMANDS\r"
-send "\\q\r"
+spawn mysqldump --opt --protocol=TCP --user=$LCDBUSER --password=$DBPASSWORD $LCDBNAME > $DOWNLOAD_FOLDER/$FILE
 interact
