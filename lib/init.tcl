@@ -32,7 +32,6 @@ if {[file exists $CONFIGPATH] == 1} {
 # ------------------------------------------------------------------------------
 
 set FILE "$CONFIGFILENAME.$DBNAME.$DBSCHEMA.$DATESTAMP.sql"
-set PGPWD "DBPASSWORD=\"$DBPASSWORD\""
 
 set MSG "File: $FILE"
 puts "[clr 6 $MSG]"

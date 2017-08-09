@@ -2,6 +2,8 @@
 # DUMP DATABASE TO $FILE
 # ------------------------------------------------------------------------------
 
+set PGPWD "PGPASSWORD=\"$DBPASSWORD\""
+
 set MSG "\nExporting $DBSCHEMA schema to SQL file..."
 puts "[clr 6 $MSG]"
 
