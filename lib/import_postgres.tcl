@@ -2,7 +2,7 @@
 # DROP PREVIOUS & IMPORT DOWNLOADED FILE TO POSTGRESQL USING PSQL
 # ------------------------------------------------------------------------------
 
-set MSG "\nReplacing $LCDBSCHEMA schema with newly downloaded file"
+set MSG "\nImporting"
 puts "[clr 6 $MSG]"
 
 spawn psql -U $LCDBUSER -d $LCDBNAME

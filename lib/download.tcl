@@ -2,7 +2,7 @@
 # DOWNLOAD FILE FROM SERVER USING SCP
 # ------------------------------------------------------------------------------
 
-set MSG "\nDownloading exported database from remote server"
+set MSG "\nDownloading"
 puts "[clr 6 $MSG]"
 
 spawn scp "$SERVERSSH:$EXPORT_FOLDER$FILE" $DOWNLOAD_FOLDER/$FILE

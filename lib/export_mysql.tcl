@@ -2,7 +2,7 @@
 # DUMP DATABASE TO $FILE
 # ------------------------------------------------------------------------------
 
-set MSG "\nExporting to SQL file..."
+set MSG "\nExporting"
 puts "[clr 6 $MSG]"
 
 interact -o -nobuffer -re $SSHPROMPT return
