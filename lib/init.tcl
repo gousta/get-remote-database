@@ -31,7 +31,7 @@ if {[file exists $CONFIGPATH] == 1} {
 # SET SOME MORE VARIABLES
 # ------------------------------------------------------------------------------
 
-set FILE "$CONFIGFILENAME.$DBNAME.$DATESTAMP.sql"
+set FILE "$CONFIGFILENAME.$DBNAME.sql"
 
 set MSG "File: $FILE"
 puts "[clr 6 $MSG]"
