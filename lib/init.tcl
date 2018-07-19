@@ -6,7 +6,6 @@ set DATESTAMP [timestamp -format %d%m%Y]
 set CONFIGFILENAME $argv
 
 set CONFIGPATH "$PROJECTPATH/configuration/$CONFIGFILENAME.conf.tcl"
-set DOWNLOAD_FOLDER "$PROJECTPATH/downloads"
 
 # ------------------------------------------------------------------------------
 # LOAD CONFIGURATION FILE
@@ -35,9 +34,3 @@ set FILE "$CONFIGFILENAME.$DBNAME.sql"
 
 set MSG "File: $FILE"
 puts "[clr 6 $MSG]"
-
-# set MSG "Cleaning downloads folder..."
-# puts "[clr 3 $MSG]"
-# puts "[clr 3 $DOWNLOAD_FOLDER]"
-# file delete -force $DOWNLOAD_FOLDER
-# file mkdir $DOWNLOAD_FOLDER
