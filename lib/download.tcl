@@ -5,7 +5,7 @@
 set MSG "\nDownloading"
 puts "[clr 6 $MSG]"
 
-spawn scp "$SERVERSSH:$EXPORT_FOLDER$FILE" /tmp/$FILE
+spawn scp "$SERVERSSH:/tmp/$FILE" /tmp/$FILE
 
 if {$SERVERPWD != ""} {
   expect {
